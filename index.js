@@ -1,41 +1,70 @@
-let request = require("request");
-let fs = require("fs");
-let options = {
-  method: "GET",
-  url: "https://www.yiban.cn/ajax/bbs/getListByBoard?offset=1&count=2&boardId=21NiLGrzQpVX92D&orgId=2004412",
-  headers: {
-    Accept: "application/json, text/plain, */*",
-    "Accept-Language": "zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7",
-    Connection: "keep-alive",
-    Referer: "https://www.yiban.cn/school/index/id/18117",
-    "Sec-Fetch-Dest": "empty",
-    "Sec-Fetch-Mode": "cors",
-    "Sec-Fetch-Site": "same-origin",
-    "User-Agent":
-      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36",
-    "sec-ch-ua":
-      '"Chromium";v="118", "Google Chrome";v="118", "Not=A?Brand";v="99"',
-    "sec-ch-ua-mobile": "?0",
-    "sec-ch-ua-platform": '"Windows"',
-    Cookie:
-      "MESSAGE_NEW_VERSION=1; preview_hidden=0; https_waf_cookie=73f90cb6-a0b6-4618bb6e61fb011caca0c224138464820247; YB_SSID=be3d6f965b00afec3041accb2621bf05; timezone=-8; Hm_lvt_ed61a54fb63b75cc82ad5c1796518f16=1697464398,1697769830,1698217713,1698759582; yiban_user_token=4e9c9583043c10e1c63d1532d0610a6e; Hm_lpvt_ed61a54fb63b75cc82ad5c1796518f16=1698759602; yiban_user_token=4e9c9583043c10e1c63d1532d0610a6e",
-    Host: "www.yiban.cn",
-  },
-};
+const request = require("request");
+const fs = require("fs");
+require("dotenv").config();
 
-request(options, function (error, response, body) {
-  if (error) throw new Error(error);
+function getNextContent() {
+  // Read existing data from the file
+  fs.readFile("data.json", (err, data) => {
+    if (err) throw err;
 
-  // Parse the response body as JSON
-  let parsedBody = JSON.parse(body);
+    let existingData = JSON.parse(data);
 
-  // Write the JSON data to a file
-  fs.writeFile(
-    "data.json",
-    JSON.stringify(parsedBody, null, 2),
-    function (err) {
-      if (err) throw err;
-      console.log("Data saved to data.json");
-    }
-  );
-});
+    // Get the num of the last item
+    const lastNum = existingData[existingData.length - 1].num;
+
+    // Calculate the new offset
+    const newOffset = lastNum + 1;
+
+    // Make a new request with the updated offset
+    let options = {
+      method: "GET",
+      url: `https://www.yiban.cn/ajax/bbs/getListByBoard?offset=${newOffset}&count=3&boardId=21NiLGrzQpVX92D&orgId=2004412`,
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "Accept-Language": "zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7",
+        Connection: "keep-alive",
+        Referer: "https://www.yiban.cn/school/index/id/18117",
+        "Sec-Fetch-Dest": "empty",
+        "Sec-Fetch-Mode": "cors",
+        "Sec-Fetch-Site": "same-origin",
+        "User-Agent":
+          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36",
+        "sec-ch-ua":
+          '"Chromium";v="118", "Google Chrome";v="118", "Not=A?Brand";v="99"',
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": '"Windows"',
+        Cookie: process.config.Cookie,
+        Host: "www.yiban.cn",
+      },
+    };
+
+    request(options, function (error, response, body) {
+      if (error) throw new Error(error);
+
+      // Parse the response body as JSON
+      let parsedBody = JSON.parse(body);
+
+      // Extract ids from the list
+      let ids = parsedBody.data.list.map((item, index) => {
+        return {
+          num: lastNum + index + 1, // 自增的值
+          id: item.id,
+          subject: item.subject,
+          summary: item.summary,
+        };
+      });
+
+      // Merge existing data with new data
+      const mergedData = existingData.concat(ids);
+
+      // Write the merged data back to the file
+      fs.writeFile("data.json", JSON.stringify(mergedData, null, 2), (err) => {
+        if (err) throw err;
+        console.log("New content appended to data.json");
+      });
+    });
+  });
+}
+
+// Call the function to get the next content
+setInterval(getNextContent, 10000);
