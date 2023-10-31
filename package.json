@@ -1,0 +1,16 @@
+{
+  "name": "易班脚本",
+  "version": "1.0.0",
+  "description": "易班 | 评论、点赞、签到脚本",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "YuYa",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "request": "^2.88.2"
+  }
+}
