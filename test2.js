@@ -72,5 +72,5 @@ function getNextContent() {
   });
 }
 
-// Call the function to get the next content
+// Call the function to get the next contents
 setInterval(getNextContent, 60000);
