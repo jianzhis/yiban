@@ -1,0 +1,101 @@
+{
+  "code": 200,
+  "message": "操作成功",
+  "data": {
+    "board": {
+      "id": "21NiLGrzQpVX92D",
+      "name": "顺职易闻",
+      "path": "/2004412/#顺职易闻",
+      "rank": 9,
+      "isLocked": 0,
+      "accessLevel": 59647
+    },
+    "canUserPost": true,
+    "offset": 1,
+    "count": 2,
+    "next": 3,
+    "more": true,
+    "list": [
+      {
+        "id": "qakT4owQp1DnQqe",
+        "subject": "哈哈哈哈哈哈",
+        "summary": "求求求i求求求",
+        "content": "<p>我也不知道说什么，大家好</p>",
+        "attachments": {
+          "cover": []
+        },
+        "created": "2023-10-26 18:23:45",
+        "modified": "2023-10-26 18:23:45",
+        "contains": 2,
+        "offset": 2,
+        "isLocked": false,
+        "isHighlighted": false,
+        "isSticky": false,
+        "isRecommended": false,
+        "user": {
+          "id": "70639488",
+          "name": "黄如仪",
+          "nick": "楚雨荨",
+          "avatar": "http://img02.fs.yiban.cn/70639488/avatar/user/160",
+          "schoolId": "18117",
+          "schoolName": "顺德职业技术学院",
+          "isAbnormal": false,
+          "isModerator": false,
+          "isBanned": false,
+          "isBannedInRoot": false,
+          "isBannedInBoard": false
+        },
+        "isUp": true,
+        "upNum": 2,
+        "isOwn": false,
+        "thumbType": 1,
+        "hasVLink": 0
+      },
+      {
+        "id": "RJQU5lagRGbVLqE",
+        "subject": "【顺德职业技术学院】血染旗红留信仰  风拂花艳祭英雄",
+        "summary": "      升旗仪式   白花献礼  红旗飘扬   故地重游  换了人间   英杰虽逝  精神永存      图片 | 校易班国防服务部编辑 | 林颖瑶初审 | 吴裕萍  庄恩玲终审 | 李志财   ​",
+        "content": "<section style=\"box-sizing: border-box; text-align: justify;\" class=\"ng-scope\"><section style=\"text-align: center; margin-top: 10px; margin-bottom: 10px; line-height: 0; position: static; box-sizing: border-box;\"><section style=\"max-width: 100%; vertical-align: middle; display: inline-block; line-height: 0; box-sizing: border-box;\"><img src=\"http://yfs01.fs.yiban.cn/web/5375816/64b3d956e51d74692921.gif\" _src=\"https://img.xiumi.us/xmi/ua/RUxf/i/979a72c6562f91a220b9cf0169270fdc-sz_4924986.gif\" handled=\"1\"></section></section><section class=\"V5\" style=\"position: static; box-sizing: border-box;\"><section class=\"\" style=\"text-align: center; margin-top: 10px; margin-bottom: 10px; position: static; box-sizing: border-box;\"><img class=\"\" src=\"http://yfs01.fs.yiban.cn/web/5375816/a0b07e45ba07f1463248.jpg\" _src=\"http://dl.xiumi.us/xmi/ua/RUxf/i/94fdd02a3c129ea7f03170b3c5284ef0-sz_35366.jpg\" handled=\"1\">\n &nbsp;</section></section><p style=\"white-space: normal; margin-top: 0px; margin-bottom: 0px; padding: 0px; box-sizing: border-box;\"><br></p><section class=\"V5\" style=\"position: static; box-sizing: border-box;\"><section class=\"\" style=\"text-align: center; margin-top: 10px; margin-bottom: 10px; position: static; box-sizing: border-box;\"><img class=\"\" src=\"http://yfs01.fs.yiban.cn/web/5375816/12faa3999a1de9625303.jpg\" _src=\"http://dl.xiumi.us/xmi/ua/RUxf/i/3ee9b0fdaa9464c2eae5fbfbb37320d4-sz_113974.jpg\" handled=\"1\">\n &nbsp;</section></section><section style=\"transform: translate3d(1px, 0px, 0px); -webkit-transform: translate3d(1px, 0px, 0px); -moz-transform: translate3d(1px, 0px, 0px); -o-transform: translate3d(1px, 0px, 0px); margin: 5px 0% 0px; position: static; box-sizing: border-box;\"><section style=\"color: rgb(151, 181, 70); text-align: center; letter-spacing: 2px; line-height: 2; padding: 0px 10px; box-sizing: border-box;\"><p style=\"margin-top: 0px; margin-bottom: 0px; padding: 0px; box-sizing: border-box;\"><span style=\"font-size: 21px; box-sizing: border-box;\"><strong style=\"box-sizing: border-box;\">升旗仪式</strong></span></p></section></section><section class=\"V5\" style=\"position: static; box-sizing: border-box;\"><section class=\"\" style=\"text-align: center; margin-top: 10px; margin-bottom: 10px; position: static; box-sizing: border-box;\"><img class=\"\" src=\"http://yfs01.fs.yiban.cn/web/5375816/9d15b45cda4347843109.jpg\" _src=\"http://dl.xiumi.us/xmi/ua/RUxf/i/15ec4de3038ae8101baaa272f4375217-sz_177356.jpg\" handled=\"1\">\n &nbsp;</section></section><p style=\"white-space: normal; margin-top: 0px; margin-bottom: 0px; padding: 0px; box-sizing: border-box;\"><br></p><section style=\"transform: translate3d(1px, 0px, 0px); -webkit-transform: translate3d(1px, 0px, 0px); -moz-transform: translate3d(1px, 0px, 0px); -o-transform: translate3d(1px, 0px, 0px); margin: 5px 0% 0px; position: static; box-sizing: border-box;\"><section style=\"color: rgb(151, 181, 70); text-align: center; letter-spacing: 2px; line-height: 2; padding: 0px 10px; box-sizing: border-box;\"><p style=\"margin-top: 0px; margin-bottom: 0px; padding: 0px; box-sizing: border-box;\"><br></p><p style=\"margin-top: 0px; margin-bottom: 0px; padding: 0px; box-sizing: border-box;\"><strong style=\"box-sizing: border-box;\"><span style=\"font-size: 21px; box-sizing: border-box;\">白花献礼&nbsp; 红旗飘扬</span></strong></p></section></section><section class=\"V5\" style=\"position: static; box-sizing: border-box;\"><section class=\"\" style=\"text-align: center; margin-top: 10px; margin-bottom: 10px; position: static; box-sizing: border-box;\"><img class=\"\" src=\"http://yfs01.fs.yiban.cn/web/5375816/86a4c9c4dbdbba683206.jpg\" _src=\"http://dl.xiumi.us/xmi/ua/RUxf/i/a13338a1250b6ac8b9e3167601c8fa59-sz_403695.jpg\" handled=\"1\">\n &nbsp;</section></section><p style=\"white-space: normal; margin-top: 0px; margin-bottom: 0px; padding: 0px; box-sizing: border-box;\"><br></p><p style=\"white-space: normal; margin-top: 0px; margin-bottom: 0px; padding: 0px; box-sizing: border-box;\"><br></p><section style=\"color: rgb(151, 181, 70); font-size: 20px; text-align: center; letter-spacing: 2px; line-height: 2; padding: 0px 10px; box-sizing: border-box;\"><p style=\"margin-top: 0px; margin-bottom: 0px; padding: 0px; box-sizing: border-box;\"><strong style=\"box-sizing: border-box;\">故地重游&nbsp; 换了人间</strong></p></section><section class=\"V5\" style=\"position: static; box-sizing: border-box;\"><section class=\"\" style=\"text-align: center; margin-top: 10px; margin-bottom: 10px; position: static; box-sizing: border-box;\"><img class=\"\" src=\"http://yfs01.fs.yiban.cn/web/5375816/769d479bfbb2708f2114.jpg\" _src=\"http://dl.xiumi.us/xmi/ua/RUxf/i/29f94a600c4ea459b2f30355f3cd28b1-sz_255968.jpg\" handled=\"1\">\n &nbsp;</section></section><p style=\"white-space: normal; margin-top: 0px; margin-bottom: 0px; padding: 0px; box-sizing: border-box;\"><br></p><p style=\"white-space: normal; margin-top: 0px; margin-bottom: 0px; padding: 0px; box-sizing: border-box;\"><br></p><section style=\"color: rgb(151, 181, 70); font-size: 20px; text-align: center; letter-spacing: 2px; line-height: 2; padding: 0px 10px; box-sizing: border-box;\"><p style=\"margin-top: 0px; margin-bottom: 0px; padding: 0px; box-sizing: border-box;\"><strong style=\"box-sizing: border-box;\"><strong style=\"box-sizing: border-box;\"></strong><span style=\"box-sizing: border-box;\">英杰虽逝&nbsp; 精神永存</span><strong style=\"box-sizing: border-box;\"></strong></strong></p></section><section class=\"V5\" style=\"position: static; box-sizing: border-box;\"><section class=\"\" style=\"text-align: center; margin-top: 10px; margin-bottom: 10px; position: static; box-sizing: border-box;\"><img class=\"\" src=\"http://yfs01.fs.yiban.cn/web/5375816/da27b767617f81642543.jpg\" _src=\"http://dl.xiumi.us/xmi/ua/RUxf/i/ed637fe1c3283c867f9c4dd5cff367e9-sz_213159.jpg\" handled=\"1\">\n &nbsp;</section></section><p style=\"white-space: normal; margin-top: 0px; margin-bottom: 0px; padding: 0px; box-sizing: border-box;\"><br></p><section class=\"V5\" style=\"position: static; box-sizing: border-box;\"><section class=\"\" style=\"text-align: center; margin-top: 10px; margin-bottom: 10px; position: static; box-sizing: border-box;\"><img class=\"\" src=\"http://yfs01.fs.yiban.cn/web/5375816/10e0388a96b801b86478.jpg\" _src=\"http://dl.xiumi.us/xmi/ua/RUxf/i/ab7257067ace4de06fae90a6f2253eaf-sz_34605.jpg\" handled=\"1\">\n &nbsp;</section></section><p style=\"white-space: normal; margin-top: 0px; margin-bottom: 0px; padding: 0px; box-sizing: border-box;\"><br></p><section style=\"transform: translate3d(1px, 0px, 0px); -webkit-transform: translate3d(1px, 0px, 0px); -moz-transform: translate3d(1px, 0px, 0px); -o-transform: translate3d(1px, 0px, 0px); margin: 20px 0px 0px; position: static; box-sizing: border-box;\"><section style=\"font-size: 15px; color: rgb(62, 62, 62); line-height: 1.8; letter-spacing: 1px; padding: 0px 20px; text-align: center; box-sizing: border-box;\"><p style=\"text-align: left; margin-top: 0px; margin-bottom: 0px; padding: 0px; box-sizing: border-box;\">图片 | 校易班国防服务部<br></p><p style=\"text-align: left; margin-top: 0px; margin-bottom: 0px; padding: 0px; box-sizing: border-box;\">编辑 | 林颖瑶</p><p style=\"text-align: left; margin-top: 0px; margin-bottom: 0px; padding: 0px; box-sizing: border-box;\">初审 | 吴裕萍&nbsp; 庄恩玲<br></p><p style=\"text-align: left; margin-top: 0px; margin-bottom: 0px; padding: 0px; box-sizing: border-box;\">终审 | 李志财</p></section></section><section class=\"V5\" style=\"position: static; box-sizing: border-box;\"><section class=\"\" style=\"text-align: center; margin-top: 10px; margin-bottom: 10px; position: static; box-sizing: border-box;\"><img class=\"\" src=\"http://yfs01.fs.yiban.cn/web/5375816/6210ef9abb7cda366680.jpg\" _src=\"http://dl.xiumi.us/xmi/ua/RUxf/i/f5da511bcb27d93828c18b353649bd01-sz_33768.jpg\" handled=\"1\">\n &nbsp;</section></section></section><p>​<br></p>",
+        "attachments": {
+          "cover": [
+            {
+              "id": "Ag0fBxDy",
+              "name": "180424230542592686.png",
+              "href": "http://img01.fs.yiban.cn/pic/5375816/web/thumb/180424230542592686.png",
+              "uri": "http://img01.fs.yiban.cn/pic/5375816/web/thumb/180424230542592686.png",
+              "mime_type": "",
+              "size": 0,
+              "purpose": 0
+            }
+          ]
+        },
+        "created": "2023-04-05 18:42:41",
+        "modified": "2023-04-05 18:42:41",
+        "contains": 674,
+        "offset": 3,
+        "isLocked": false,
+        "isHighlighted": false,
+        "isSticky": false,
+        "isRecommended": false,
+        "user": {
+          "id": "5375816",
+          "name": "顺德职业技术学院",
+          "nick": "顺德职业技术学院",
+          "avatar": "http://img02.fs.yiban.cn/5375816/avatar/user/160",
+          "schoolId": "18117",
+          "schoolName": "顺德职业技术学院",
+          "isAbnormal": false,
+          "isModerator": false,
+          "isBanned": false,
+          "isBannedInRoot": false,
+          "isBannedInBoard": false
+        },
+        "isUp": false,
+        "upNum": 146,
+        "isOwn": false,
+        "thumbType": 3,
+        "hasVLink": 0
+      }
+    ]
+  }
+}

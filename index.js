@@ -1,7 +1,8 @@
 let request = require("request");
+let fs = require("fs");
 let options = {
   method: "GET",
-  url: "https://www.yiban.cn/ajax/bbs/getListByBoard?offset=0&count=2&boardId=21NiLGrzQpVX92D&orgId=2004412",
+  url: "https://www.yiban.cn/ajax/bbs/getListByBoard?offset=1&count=2&boardId=21NiLGrzQpVX92D&orgId=2004412",
   headers: {
     Accept: "application/json, text/plain, */*",
     "Accept-Language": "zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7",
@@ -21,7 +22,20 @@ let options = {
     Host: "www.yiban.cn",
   },
 };
-request(options, function (error, response) {
+
+request(options, function (error, response, body) {
   if (error) throw new Error(error);
-  console.log(response.body);
+
+  // Parse the response body as JSON
+  let parsedBody = JSON.parse(body);
+
+  // Write the JSON data to a file
+  fs.writeFile(
+    "data.json",
+    JSON.stringify(parsedBody, null, 2),
+    function (err) {
+      if (err) throw err;
+      console.log("Data saved to data.json");
+    }
+  );
 });
