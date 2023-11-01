@@ -1,6 +1,7 @@
 const request = require("request");
 const fs = require("fs");
 require("dotenv").config();
+const yiban_user_token = process.env.YIBAN_USER_TOKEN;
 
 function getNextContent() {
   // Read existing data from the file
@@ -33,7 +34,7 @@ function getNextContent() {
           '"Chromium";v="118", "Google Chrome";v="118", "Not=A?Brand";v="99"',
         "sec-ch-ua-mobile": "?0",
         "sec-ch-ua-platform": '"Windows"',
-        Cookie: process.config.Cookie,
+        Cookie: `MESSAGE_NEW_VERSION=1; preview_hidden=0; https_waf_cookie=ac1c8da0-060b-425a8b8071f6b9b7e75132390ee733c5f864; YB_SSID=21a05b01349f782468dd1d1384c882ea; timezone=-8; Hm_lvt_ed61a54fb63b75cc82ad5c1796518f16=1697769830,1698217713,1698759582,1698815816; yiban_user_token=${yiban_user_token}; Hm_lpvt_ed61a54fb63b75cc82ad5c1796518f16=1698818122`,
         Host: "www.yiban.cn",
       },
     };

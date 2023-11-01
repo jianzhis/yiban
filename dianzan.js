@@ -1,5 +1,8 @@
 const request = require("request");
 const fs = require("fs");
+require("dotenv").config();
+const yiban_user_token = process.env.YIBAN_USER_TOKEN;
+const yiban_user_id = process.env.YIBAN_USER_ID;
 
 let currentIndex = 0;
 const file = "db.txt";
@@ -27,6 +30,7 @@ function thumbPost(postId) {
     method: "POST",
     url: "https://s.yiban.cn/api/post/thumb",
     headers: {
+      "Content-Type": "application/json",
       Accept: "application/json, text/plain, */*",
       "Accept-Language": "zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7",
       Connection: "keep-alive",
@@ -41,15 +45,13 @@ function thumbPost(postId) {
         '"Chromium";v="118", "Google Chrome";v="118", "Not=A?Brand";v="99"',
       "sec-ch-ua-mobile": "?0",
       "sec-ch-ua-platform": '"Windows"',
-      Cookie:
-        "MESSAGE_NEW_VERSION=1; preview_hidden=0; https_waf_cookie=ac1c8da0-060b-425a8b8071f6b9b7e75132390ee733c5f864; YB_SSID=21a05b01349f782468dd1d1384c882ea; timezone=-8; Hm_lvt_ed61a54fb63b75cc82ad5c1796518f16=1697769830,1698217713,1698759582,1698815816; yiban_user_token=d5f492d4b24a90f4218492d22fcdc5f5; Hm_lpvt_ed61a54fb63b75cc82ad5c1796518f16=1698818122",
-      "Content-Type": "application/json",
+      Cookie: `MESSAGE_NEW_VERSION=1; preview_hidden=0; https_waf_cookie=ac1c8da0-060b-425a8b8071f6b9b7e75132390ee733c5f864; YB_SSID=21a05b01349f782468dd1d1384c882ea; timezone=-8; Hm_lvt_ed61a54fb63b75cc82ad5c1796518f16=1697769830,1698217713,1698759582,1698815816; yiban_user_token=${yiban_user_token}; Hm_lpvt_ed61a54fb63b75cc82ad5c1796518f16=1698818122`,
       Host: "s.yiban.cn",
     },
     body: JSON.stringify({
       action: "up",
       postId: postId,
-      userId: "5375816",
+      userId: yiban_user_id,
     }),
   };
 
