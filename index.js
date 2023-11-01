@@ -18,7 +18,7 @@ function getNextContent() {
     // Make a new request with the updated offset
     let options = {
       method: "GET",
-      url: `https://www.yiban.cn/ajax/bbs/getListByBoard?offset=${newOffset}&count=3&boardId=21NiLGrzQpVX92D&orgId=2004412`,
+      url: `https://www.yiban.cn/ajax/bbs/getListByBoard?offset=${newOffset}&count=10&boardId=21NiLGrzQpVX92D&orgId=2004412`,
       headers: {
         Accept: "application/json, text/plain, */*",
         "Accept-Language": "zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7",
@@ -61,10 +61,16 @@ function getNextContent() {
       fs.writeFile("data.json", JSON.stringify(mergedData, null, 2), (err) => {
         if (err) throw err;
         console.log("New content appended to data.json");
+
+        // Check if num is 1000 and stop if true
+        if (lastNum + 1 >= 1000) {
+          console.log("Reached num 1000. Stopping execution.");
+          process.exit(); // This will stop the script
+        }
       });
     });
   });
 }
 
-// Call the function to get the next content
-setInterval(getNextContent, 10000);
+// Call the function to get the next contents
+setInterval(getNextContent, 60000);
