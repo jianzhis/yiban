@@ -2,6 +2,7 @@ const request = require("request");
 const fs = require("fs");
 require("dotenv").config();
 const yiban_user_token = process.env.YIBAN_USER_TOKEN;
+const yiban_user_id = process.env.YIBAN_USER_ID;
 
 let currentIndex = 0;
 const file = "db.txt";
@@ -50,7 +51,7 @@ function thumbPost(postId) {
     body: JSON.stringify({
       action: "up",
       postId: postId,
-      userId: "5375816",
+      userId: yiban_user_id,
     }),
   };
 
