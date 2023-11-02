@@ -6,6 +6,8 @@
 
 ### 安装步骤
 
+<a href='https://codespaces.new/jianzhis/yiban?quickstart=1'><img src='https://github.com/codespaces/badge.svg' alt='Open in GitHub Codespaces' style='max-width: 100%;'></a>
+
 1. 克隆仓库到本地：
 
 ```powershell
