@@ -8,7 +8,7 @@ const ORG_ID = "2004412";
 
 async function getNextContent() {
   try {
-    const data = await fs.readFile("data.json");
+    const data = await fs.readFile("./data/data.json", "utf8");
     const existingData = JSON.parse(data);
 
     const lastNum = existingData[existingData.length - 1]?.num || 0;
@@ -48,7 +48,7 @@ async function getNextContent() {
 
     const mergedData = existingData.concat(ids);
 
-    await fs.writeFile("data.json", JSON.stringify(mergedData, null, 2));
+    await fs.writeFile("./data/data.json", JSON.stringify(mergedData, null, 2));
 
     if (lastNum + 1 >= 1500) {
       console.log("Reached num 1500. Stopping execution.");

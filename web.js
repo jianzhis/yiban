@@ -19,9 +19,9 @@ let yiban_user_ssid = "";
 let yiban_user_id = "";
 let currentIndex = 0;
 let requestCount = 0;
+let TIMEOUT_MS = 5000; // 默认值
 
-const file = "db.txt";
-const TIMEOUT_MS = process.env.TIMEOUT_MS || 5000;
+const file = "./data/db.txt";
 
 async function readCurrentIndex() {
   try {
@@ -83,8 +83,11 @@ async function thumbPost(postId) {
   }
 }
 
+let jsonData = null; // 保存数据的全局变量
+let paused = false; // 暂停状态的全局变量
+
 async function processItem(index, jsonData, socket) {
-  if (index < jsonData.length && requestCount < 30) {
+  if (index < jsonData.length && requestCount < 30 && !paused) {
     const currentItem = jsonData[index];
     const itemId = currentItem.id;
 
@@ -109,6 +112,19 @@ async function processItem(index, jsonData, socket) {
 
 app.use(express.static(__dirname + "/public"));
 
+app.post("/submit", (req, res) => {
+  yiban_user_token = req.body.token;
+  yiban_user_ssid = req.body.ssid;
+  yiban_user_id = req.body.userId;
+  TIMEOUT_MS = req.body.timeout || TIMEOUT_MS;
+
+  if (!yiban_user_token || !yiban_user_ssid || !yiban_user_id) {
+    res.send("Token、SSID 和 用户ID 不能为空");
+  } else {
+    res.send("已保存 Token, SSID, 用户ID 和 TIMEOUT_MS");
+  }
+});
+
 const job = new cron("0 0 * * *", async () => {
   if (yiban_user_token && yiban_user_ssid) {
     yiban_user_id = process.env.YIBAN_USER_ID;
@@ -116,8 +132,8 @@ const job = new cron("0 0 * * *", async () => {
     requestCount = 0;
 
     try {
-      const data = await fs.readFile("data.json", "utf8");
-      const jsonData = JSON.parse(data);
+      const data = await fs.readFile("./data/data.json", "utf8");
+      jsonData = JSON.parse(data);
       await processItem(currentIndex, jsonData, null);
     } catch (error) {
       console.error("发生错误", error);
@@ -132,15 +148,34 @@ io.on("connection", (socket) => {
     if (yiban_user_token && yiban_user_ssid) {
       currentIndex = await readCurrentIndex();
       requestCount = 0;
+      paused = false;
 
       try {
-        const data = await fs.readFile("data.json", "utf8");
-        const jsonData = JSON.parse(data);
+        const data = await fs.readFile("./data/data.json", "utf8");
+        jsonData = JSON.parse(data);
         await processItem(currentIndex, jsonData, socket);
       } catch (error) {
         console.error("发生错误", error);
       }
     }
+  });
+
+  socket.on("pause", () => {
+    paused = true;
+  });
+
+  socket.on("resume", () => {
+    if (paused && jsonData) {
+      paused = false;
+      processItem(currentIndex, jsonData, socket);
+    }
+  });
+
+  socket.on("stop", () => {
+    paused = true;
+    currentIndex = 0;
+    requestCount = 0;
+    updateCurrentIndex();
   });
 });
 

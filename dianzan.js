@@ -95,7 +95,7 @@ async function processItem(index, jsonData) {
   currentIndex = await readCurrentIndex();
 
   try {
-    const data = await fs.readFile("data.json", "utf8");
+    const data = await fs.readFile("./data/data.json", "utf8");
     const jsonData = JSON.parse(data);
     await processItem(currentIndex, jsonData);
   } catch (error) {
