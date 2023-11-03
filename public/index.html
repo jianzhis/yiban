@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web版</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.3/socket.io.js"></script>
+  </head>
+
+  <body>
+    <form action="/submit" method="post" id="myForm">
+      Token: <input type="text" name="token" /><br />
+      SSID: <input type="text" name="ssid" /><br />
+      用户ID: <input type="text" name="userId" /><br />
+      TIMEOUT_MS: <input type="text" name="timeout" /><br />
+      <input type="submit" value="Submit" />
+    </form>
+
+    <div id="progress"></div>
+
+    <button id="startRequest">开始请求</button>
+    <button id="pauseRequest">暂停请求</button>
+    <button id="resumeRequest">继续请求</button>
+    <button id="stopRequest">停止请求</button>
+
+    <script>
+      const socket = io();
+
+      document
+        .getElementById("myForm")
+        .addEventListener("submit", async function (e) {
+          e.preventDefault();
+
+          const token = document.querySelector('input[name="token"]').value;
+          const ssid = document.querySelector('input[name="ssid"]').value;
+          const userId = document.querySelector('input[name="userId"]').value;
+          const timeout = document.querySelector('input[name="timeout"]').value;
+
+          const response = await fetch("/submit", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded",
+            },
+            body: `token=${token}&ssid=${ssid}&userId=${userId}&timeout=${timeout}`,
+          });
+
+          const data = await response.text();
+          alert(data);
+        });
+
+      document
+        .getElementById("startRequest")
+        .addEventListener("click", async function () {
+          socket.emit("start");
+        });
+
+      document
+        .getElementById("pauseRequest")
+        .addEventListener("click", async function () {
+          socket.emit("pause");
+        });
+
+      document
+        .getElementById("resumeRequest")
+        .addEventListener("click", async function () {
+          socket.emit("resume");
+        });
+
+      document
+        .getElementById("stopRequest")
+        .addEventListener("click", async function () {
+          socket.emit("stop");
+        });
+
+      socket.on("progress", (data) => {
+        const progressElement = document.getElementById("progress");
+        progressElement.innerHTML = `
+          <p>当前进度: ${data.currentIndex}, 已发送请求次数: ${
+          data.requestCount
+        }</p>
+          <pre>响应数据: ${JSON.stringify(data.response, null, 2)}</pre>
+        `;
+      });
+    </script>
+  </body>
+</html>
