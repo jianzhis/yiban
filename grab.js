@@ -3,7 +3,7 @@ const fs = require("fs").promises;
 require("dotenv").config();
 const yiban_user_token = process.env.YIBAN_USER_TOKEN;
 const API_URL = "https://www.yiban.cn/ajax/bbs/getListByBoard";
-const BOARD_ID = "21NiLGrzQpVX92D";
+const BOARD_ID = "4NEcxJy1grZXq91";
 const ORG_ID = "2004412";
 
 async function getNextContent() {
