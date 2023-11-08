@@ -20,10 +20,16 @@ git clone https://github.com/jianzhis/yiban.git
 npm install
 ```
 
-3. 启动服务：
+3. 抓取文章：
 
 ```powershell
-node index.js
+node grab.js
+```
+
+4. 运行Web：
+
+```powershell
+node web.js
 ```
 
 ## ✨ 功能亮点
