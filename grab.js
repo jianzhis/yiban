@@ -3,6 +3,7 @@ const fs = require("fs").promises;
 require("dotenv").config();
 const yiban_user_token = process.env.YIBAN_USER_TOKEN;
 const API_URL = "https://www.yiban.cn/ajax/bbs/getListByBoard";
+const SCHOOL_ID = "18117";
 const BOARD_ID = "4NEcxJy1grZXq91";
 const ORG_ID = "2004412";
 
@@ -21,7 +22,7 @@ async function getNextContent() {
         Accept: "application/json, text/plain, */*",
         "Accept-Language": "zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7",
         Connection: "keep-alive",
-        Referer: "https://www.yiban.cn/school/index/id/18117",
+        Referer: `https://www.yiban.cn/school/index/id/${SCHOOL_ID}`,
         "Sec-Fetch-Dest": "empty",
         "Sec-Fetch-Mode": "cors",
         "Sec-Fetch-Site": "same-origin",
